@@ -1,6 +1,9 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -49,6 +52,10 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Omada brand colors */
+    --omada-blue: 221 83% 53%;
+    --omada-teal: 173 80% 40%;
   }
 
   .dark {
@@ -96,6 +103,16 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-['Inter',sans-serif];
   }
+}
+
+/* Custom button styles for the landing page */
+.omada-button {
+  @apply bg-[hsl(var(--omada-blue))] text-white font-medium py-3 px-8 rounded-md transition-all duration-300 hover:bg-[hsl(var(--omada-blue)/0.9)] hover:shadow-md;
+}
+
+/* Custom gradient for text logo */
+.logo-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--omada-blue))] to-[hsl(var(--omada-teal))];
 }
